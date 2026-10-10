@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forex Signal Profit Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>Forex Signal Profit Calculator</h1>
+      <p class="subtitle">Adjust any field — results update in real time.</p>
+    </header>
+
+    <section class="grid">
+      <div class="card inputs">
+        <h2>Inputs</h2>
+
+        <fieldset class="group">
+          <legend>Account Type</legend>
+          <div class="segmented">
+            <button type="button" data-name="account" data-value="standard" class="active">Standard</button>
+            <button type="button" data-name="account" data-value="cent">Cent</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="group">
+          <legend>Asset Type</legend>
+          <div class="segmented">
+            <button type="button" data-name="asset" data-value="forex" class="active">Forex Pair</button>
+            <button type="button" data-name="asset" data-value="jpy">JPY Pair</button>
+            <button type="button" data-name="asset" data-value="gold">Gold</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="group">
+          <legend>Direction</legend>
+          <div class="segmented">
+            <button type="button" data-name="direction" data-value="buy" class="active">BUY</button>
+            <button type="button" data-name="direction" data-value="sell">SELL</button>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="entry">Entry price</label>
+          <input id="entry" type="number" step="any" value="1.0850" />
+        </div>
+
+        <div class="field">
+          <label for="sl">Stop Loss price</label>
+          <input id="sl" type="number" step="any" value="1.0835" />
+        </div>
+
+        <div class="field">
+          <label for="spread">Spread (points, MT5)</label>
+          <input id="spread" type="number" step="any" value="0" />
+        </div>
+
+        <div class="field">
+          <label for="numTp">Take-profit levels</label>
+          <select id="numTp">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3" selected>3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+        <div id="tpInputs"></div>
+
+        <div class="field">
+          <label for="balance">Account balance (USD)</label>
+          <input id="balance" type="number" step="any" value="100" />
+        </div>
+
+        <div class="field">
+          <label for="risk">Risk percentage (%)</label>
+          <input id="risk" type="number" step="any" value="1" />
+        </div>
+      </div>
+
+      <div class="card results">
+        <h2>Results</h2>
+        <div id="summary"></div>
+        <div id="warnings"></div>
+        <h3>Take-Profit Levels</h3>
+        <div id="tpResults"></div>
+        <div id="footer"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
