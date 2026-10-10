@@ -1,0 +1,8 @@
+services:
+  forex-calculator:
+    build: .
+    image: forex-calculator:latest
+    container_name: forex-calculator
+    ports:
+      - "3003:3003"
+    restart: unless-stopped
